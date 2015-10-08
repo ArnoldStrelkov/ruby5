@@ -1,0 +1,19 @@
+
+<h1>Here's blog: </h1>
+<hr />
+
+<p>
+<% @hello.each do |rr| %>
+
+<%= rr.id %>
+<br>
+<% end %>
+<hr />
+
+<% for post in @hello %>
+<h3><%= post.body %></h3>
+<p>
+
+
+<% end %>
+<hr />

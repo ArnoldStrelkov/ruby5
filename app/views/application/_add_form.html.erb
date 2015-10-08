@@ -1,0 +1,27 @@
+   <div  class="add_menu add_menu_on">
+            <a class="add_post_button" href="#">добавить пост</a>
+        </div>
+        <div class="on_off">
+        <div class="add_post">
+            <form method="POST" action="/api/post/create" class="ajax_form post-form"  >
+              
+  
+                <label >Заголовок</label> <br>
+                <input name="header" type="text" class="form-control" placeholder="">
+                <br>
+                <label >Текст</label> <br>
+                <textarea name="body" type="text " rows="10" class="form-control"></textarea>
+                
+                <br>
+                <input type="file" name="picture" class="post_picture_input" style = "display: none; " >
+                
+                <img id="" class=" image_preview js_add_post_picture post_pic" src="" alt="" border="0">
+                
+                <a class="js_add_post_picture post_down_menu js_off_pict" href="#">добавить фото</a>
+                </div>
+               
+				<div  class="add_menu ">
+                <button type="submit" class="add_post_button">Отправить</button>  
+                </div>   
+            </form>
+         </div>

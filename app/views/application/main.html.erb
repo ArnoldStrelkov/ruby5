@@ -1,0 +1,98 @@
+
+
+<% for post in @all %>
+
+<div class="post">
+    
+     
+      
+        
+    <%#= simple_format(post.body, {}, wrapper_tag: 'div') %>
+    <h3><%= post.header %></h3>
+    
+     <img class="post_pic" 
+     src="<%= post.picture.url unless post.picture.nil? %>" alt="" border="0"> 
+    
+    
+        <% if !post.video.to_s.empty? %>
+            
+            <div class="mv">
+             <div class="myvideo">
+            <div class="youtube"
+            id="<%= post.video.split('?v=')[1] %>"
+            style="width: 640px; height: 350px;" >
+                <div class="play"></div>
+                
+                
+                
+            </div>
+                  </div>
+                </div>
+        
+        <% end%>
+    
+    
+    
+    
+    <div class="post_in">
+    
+    <%= h(post.body).gsub("\n", "<br>").html_safe%>
+    </div>
+<table border="0">
+            <tr>
+                <td > <img class="mini_avatar" 
+                src="<%= post.user.avatar.url  %>" 
+                alt="" border="0"></td>
+                
+                <td><a class="post_down_menu"
+                       href="/<%= @target  %>/<%= post.user.id  %>"><%= simple_format(post.user.name.gsub(' ', '&nbsp;'), {}, wrapper_tag: 'div')  %></a></td>
+                <td width="100%"></td>
+                <td><a class="post_down_menu post_full" href="#" style="display: none">развернуть</a></td>
+                
+               
+                    
+                   
+                   <%if @current_user and (post.user.id == @current_user.id)  %>
+                   <td>
+                        <a class="post_down_menu  get_edit"
+                                          href="/api/get_edit/<%= post.id  %>">изменить </a></td>
+                           
+                    <td><a class="post_down_menu del_post" data-post-id="<?php echo $post->id; ?>"
+                    href="/api/del_post/<%= post.id  %>">удалить</a></td>
+                <% else %>
+                <td>
+                    <%if @current_user  %>
+                         <%if Savedpost.find_by(user_id: @current_user.id, post_id: post.id)  %>
+                            <a class="saved post_down_menu active"
+                            href="/api/saved/<%= post.id  %>">сохранено </a>
+                         <% else %> 
+                         <a class="saved post_down_menu "
+                           href="/api/saved/<%= post.id  %>">сохранить </a>
+                         <% end %></td>
+                         
+                          <td>
+                         <%if Feed.find_by(feed_id: post.user.id, user_id: @current_user.id)  %>
+                            <a class="post_down_menu  feed active"
+                            href="/api/read/<%= post.user.id  %>">читаю </a>
+                         <% else %> 
+                         <a class="post_down_menu  feed"
+                            href="/api/read/<%= post.user.id  %>">читать </a>
+                         <% end %> </td>
+                     <% else %>
+                    <a class="post_down_menu  saved"
+                            href="/signin">сохранить </a>
+                    <% end %>
+                    </td>
+                  <% end %>
+               
+            </tr>
+        </table>
+
+
+
+
+</div>
+
+
+<% end %>
+

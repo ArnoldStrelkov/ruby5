@@ -1,0 +1,48 @@
+<% provide(:title, "Все блоги") %>
+<div class = 'block1 ltext '>
+ <div class = top>
+   <a href="#" class="add_post ">добавить пост</a>
+    <br>
+   <div class ="myajax active">
+   <form class="new_base" id="new_base1" action="/ajax1" method="post">
+     <input type="text" class="www" name="body" />
+    <input type="text" class="www" name="user_id" />
+    
+     <input type="submit"  name="commit" value="Create" />
+     
+   </form>
+   </div>
+ </div>
+  
+  <div class = main>
+  
+    
+   <div class = post-cont>
+       
+      
+
+
+      <% for post in @all %>
+      <div class = blok>
+       <%= post.body %> (<%= post.user_id %>)
+      </div>
+      <% end %>
+      <BR>
+    
+   </div>
+  
+  </div>
+
+</div>
+ 
+<div class = 'rtext'>
+   <% for user in @users %>
+      <div class = ''>
+       <a class = 'a_ajax' href = '/test/<%= user.id %>'>
+       <%= user.name %> (<%= user.id %>)
+       </a>
+      </div>
+      <% end %>
+      
+</div>
+<div class="clear">

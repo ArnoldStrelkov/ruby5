@@ -1,0 +1,30 @@
+
+
+
+
+
+ 
+ 
+ <% for user in @users %>
+    
+     
+       
+     
+   <div>
+     <a class = 'a_ajax <%= 'active' if (user.id.to_s == @user_id.to_s) %>' 
+       href = '/<%= @target  %>/<%= user.id %>'>
+        <img class="mini_avatar" src="<%= user.avatar.url unless user.avatar.url.nil? %>" 
+       alt="" border="0">
+         
+       <%= user.name %></a>
+     
+     
+       </div>
+       
+       
+     
+      
+      
+      <% end %>
+      
+ 

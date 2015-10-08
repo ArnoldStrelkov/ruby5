@@ -1,0 +1,31 @@
+ <div class="">
+            <form method="POST" action="/api/update/<%= @post.id %>" class="update"  >
+              
+        
+        <div class="css_inner_form">
+                <label >Заголовок</label> <br>
+                <input name="header" type="text" class="form-control" placeholder=""
+                 value = '<%= @post.header %>' >
+                <br>
+                <img id="" class="js_add_post_picture image_preview  post_pic" 
+                src="<%= @post.picture.url %>" alt="" border="0">
+                
+                <% if @post.picture.url.nil?%>
+                <a class="js_add_post_picture add_foto_menu " href="#">добавить фото</a>
+                <% end%>
+                
+            <input type="file" name="picture" class="post_picture_input" style = "display: none; " >
+             <br><br>
+                <label >Текст</label> <br>
+                <textarea name="body" type="text " rows="15" class="form-control"><%= @post.body %></textarea>
+                
+                <br>
+               
+             
+                
+                </div>
+    		          <div  class="add_menu ">
+                <button type="submit" class="add_post_button">Отправить</button>  
+                </div>   
+            </form>
+         </div>

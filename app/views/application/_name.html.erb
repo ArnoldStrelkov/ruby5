@@ -1,0 +1,63 @@
+<img class="avatar <%= 'js_avatar' if (@my_id.to_s == @user_id.to_s and @current_user) %>" 
+src="<%= @single_user.avatar.url unless @single_user.nil? %>
+<%= 'uploads/viki5.jpg' if @single_user.nil? %>" 
+alt="" border="0">
+
+
+    <div class="">
+    <form  style = "display: none; " method="POST" action="/api/picture" class="form_picture"  >
+    <input type="file" name="user[avatar]" class="button_picture" id="user_avatar">
+    </form>
+    </div> 
+
+
+  <div class="name_css">
+      <h3> <%= @single_user.name unless @single_user.nil? %>
+      
+       
+     
+    <%= 'Все блоги' if @logo %>
+      
+       <%= 'Читаемые блоги'  if @target == 'feed' and @single_user.nil? %>
+        <%= 'Сохраненные посты'  if @target == 'saved' and @single_user.nil?%>
+      </h3>
+      
+      
+       
+  </div>
+ 
+ <a class="name_menu <%= 'active' if (@target == 'user' and !(@user_id.to_s == @my_id.to_s)) or @my_id.nil?  %>"
+ href="/">Все блоги</a>
+ 
+ <%if @current_user%>
+ 
+  <a class="name_menu <%= 'active' if @target == 'feed' %>" 
+ href="/feed">Читаемые блоги</a>
+ 
+  <a class="name_menu <%= 'active' if @target == 'saved' %>" 
+ href="/saved">Сохраненные посты</a>
+ 
+  <a class="name_menu <%= 'active' if (@my_id.to_s == @user_id.to_s and @current_user) %>" 
+ href="/user/<%= @my_id %>">Мой блог</a>
+
+ 
+<%else%>
+
+<a class="name_menu <%= 'active' if @target == 'feed' %>" 
+ href="/signin">Читаемые блоги</a>
+ 
+  <a class="name_menu <%= 'active' if @target == 'saved' %>" 
+ href="/signin">Сохраненные посты</a>
+ 
+<a class="name_menu"  href="/signin">Мой блог</a>
+<% end%>
+
+<script id="true_loadmore">
+	
+//	$(window).scroll(function(){
+	
+	
+//	alert($(document).scrollTop()+ 'dfg' +  $(document).height());
+//	});
+	
+	</script>

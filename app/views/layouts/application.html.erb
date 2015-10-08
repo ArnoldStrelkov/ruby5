@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <% uu = User.find_by(id: cookies[:id]) %> 
+Привет <%= @u.name unless @u.nil? %> 
+
+<%= link_to "Вход", signin_path  if @u.nil?%>
+
+
+<%= link_to "Выход", signout_path, method: "delete" unless @u.nil?%>
+<br><br>
+<%= yield %>
+
+ 
+ </div>
+</body>
+</html>

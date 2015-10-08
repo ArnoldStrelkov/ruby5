@@ -1,0 +1,56 @@
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555555;
+    vertical-align: middle;
+    background-color: white;
+    background-image: none;
+    border: 1px solid #cccccc;
+   
+    font-family: 'Open Sans', sans-serif;
+  
+    
+}
+    
+.form-control:focus {
+    border-color: #66afe9;
+    }
+
+
+
+
+textarea.form-control {
+    font-family: 'Open Sans', sans-serif;
+  
+    width: 100%;
+        display:block; 
+        
+        
+       
+}
+
+
+label {
+   font-weight: bold; }
+   
+h3 {
+   margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.on_off {
+   background-color: white;
+   }
+
+
+.css_inner_form{
+   background-color: white;
+   
+     padding: 20px ;
+        padding-right: 50px ;
+   }
+

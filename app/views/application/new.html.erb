@@ -1,0 +1,49 @@
+
+<h1>New: </h1>
+<hr />
+<div>
+   <a href="#" onclick="ajax()">ajax</a>
+   <br>
+   <a href="#" data-ajax="ajax">data ajax</a>
+  <hr />
+  <div id="results"> блок</div>
+    <hr />
+  
+  <a href="#" data-background-color="#990000">Paint it red</a>
+<a href="#" data-background-color="#009900" data-text-color="#FFFFFF">Paint it green</a>
+<a href="#" data-background-color="#000099" data-text-color="#FFFFFF">Paint it blue</a>
+<hr />
+<a href="#" onclick="paintIt(this, '#990000')">Paint it red</a>
+<hr />
+<a href="#" onclick="my (this, '#990000')">My</a>
+<a href="#" onclick="func()">alert</a>
+<hr />
+<p></div>
+<%= form_tag do %>
+  Содержимое формы
+
+                 <table ><tr ><td > 
+				   <label for="exampleInputEmail1">текст</label>
+                    <input name="body" type="text" class="form-control" placeholder=""> </td><td> 
+				  
+				  </td><td> <label for="exampleInputPassword1">&nbsp;</label><br>
+				    <button type="submit" class="ajSubmitStyle">отправить</button> </td> </tr>   </table> </form>
+<% end %>
+
+<hr />
+<hr />
+<%= form_for @hello, remote: true, url: {action: "new"}  do |f| %>
+  <%= f.text_field :body %>
+ 
+  <%= f.submit "Create" %>
+<% end %>
+
+<hr />
+
+<p>
+<% for post in @all %>
+<h3><%= post.body %></h3>
+<p>
+
+
+<% end %>

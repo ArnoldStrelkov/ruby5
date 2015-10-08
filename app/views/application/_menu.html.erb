@@ -1,0 +1,15 @@
+ 
+ <div style="">
+ 
+      
+       <div class = button_ee>
+       <%= link_to "Вход", signin_path ,  class:"exit menu" if @current_user.nil?%>
+       </div>
+      
+       <%= link_to "Выход", signout_path, method: "delete" ,  class:"menu" unless @current_user.nil?%>
+        <br>
+        <a href= '/js' class = menu >1</a>
+         <a href= '/js' class = menu >2</a>
+         <a href= '/js' class = menu >3</a>
+        
+  </div>

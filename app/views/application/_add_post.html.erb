@@ -1,0 +1,29 @@
+   
+        <div class="on_off">
+        
+        
+            <form method="POST" action="/api/post/create" class="ajax_form post-form "  >
+              
+                <div class="css_inner_form">
+                <label >Заголовок</label> <br>
+                <input name="header" type="text" class="form-control" placeholder="">
+                 <br>
+                <input type="file" name="picture" class="post_picture_input" style = "display: none; " >
+                <img id="" class="image_preview js_add_post_picture post_pic" src="" alt="" border="0">
+                <a class="js_add_post_picture add_foto_menu " href="#">добавить&nbsp;фото</a><br><br>
+               
+                <input name="video" type="text" class="form-control" placeholder="добавить видео (вставьте ссылку на youtube)">
+                    
+               
+                <br>
+                <label >Текст</label> <br>
+                <textarea name="body" type="text " rows="15" class="form-control"></textarea>
+                
+               
+                </div>  
+               
+				<div  class="add_menu ">
+                <button type="submit" class="add_post_button">Отправить</button>  
+                </div>   
+            </form>
+         </div>

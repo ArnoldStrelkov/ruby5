@@ -1,0 +1,424 @@
+
+.main {
+    width: 100%;
+    min-width: 600px;
+    min-height: 500px;
+    height: 100%;
+}
+
+.block1 {
+    background: #f3f3f3;
+    width: 220px;
+  
+    float: left;
+}
+
+.right-block {
+    width: 350px;
+    background: #f3f3f3;
+    float: right;
+    height: 100%;
+
+}
+
+.block3 {
+    float: left;
+    width: 250px;
+    background: #f3f3f3;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 100%;
+
+
+}
+
+.block4 {
+
+    float: right;
+    width: 100px;
+    overflow: hidden;
+    height: 100%;
+    background: #eaeaea;
+    
+  
+}
+
+.fixed {
+  background: #eaeaea;
+    height: 100%;
+    position: fixed;
+  width: 100px;
+}
+
+
+.block2 {
+
+    min-width: 200px;
+    margin: 0 350px 0 220px;
+
+}
+
+
+.post {
+    margin-bottom: 20px;
+      background-color: white;
+      PADDING: 15px;
+      PADDING-top: 5px;
+       -moz-border-radius: 10px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 10px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:10px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 10px; /* закругление углов для всех, кто понимает */ 
+     
+    
+}
+
+.post_in {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    max-height: 300px;
+    overflow: hidden;
+    background-color: white;
+    padding: 10px;
+   text-align: justify;
+    
+}
+
+.full .post_in,.full.post_in{
+    max-height: none;
+}
+
+
+.menu {
+    BACKGROUND-COLOR: #eaeaea;
+    DISPLAY: block;
+    font-family: Tahoma;
+    COLOR: #2B587A;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    PADDING-BOTTOM: 40px;
+    PADDING-LEFT: 20px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 40px;
+    vertical-align: top;
+     -moz-border-radius: 4px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 4px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:4px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 4px; /* закругление углов для всех, кто понимает */ 
+
+}
+
+.menu:hover {
+    COLOR: White;
+    BACKGROUND-COLOR: #FF6400;
+}
+
+.a_ajax {
+    BACKGROUND-COLOR: #f3f3f3;
+    DISPLAY: block;
+    font-family: Tahoma;
+    COLOR: #2B587A;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px;
+    height: 49px;
+    
+    padding-bottom : 6px;
+
+ 
+	
+
+
+}
+
+.a_ajax:hover {
+    COLOR: White;
+    BACKGROUND-COLOR: #FF6400;
+}
+
+.a_ajax.active{
+    color: #FF6400;
+}
+.a_ajax.active:hover{
+    color: #FFF;
+}
+
+.name_menu {
+    DISPLAY: block;
+    font-family: Tahoma;
+    COLOR: #2B587A;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    PADDING-BOTTOM: 20px;
+    PADDING-LEFT: 25px;
+    PADDING-RIGHT: 10px;
+    PADDING-TOP: 20px;
+	  
+}
+
+.name_menu:hover {
+
+    COLOR: White;
+    BACKGROUND-COLOR: #FF6400;
+}
+
+.name_menu.active{
+    color: #FF6400;
+}
+.name_menu.active:hover{
+    color: #FFF ;
+}
+
+.name_css {
+   
+    PADDING-LEFT: 25px;
+    
+	  
+}
+
+.add_post {
+    background: White;
+    padding: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 50px;
+   
+}
+
+.add_post_update {
+    background: White;
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+   
+   
+}
+
+.add_menu {
+    text-align:center;
+    background: #f3f3f3;
+    display: block;
+    padding: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    
+
+}
+
+.add_post_button {
+    BACKGROUND-COLOR: White;
+    DISPLAY: block;
+    font-family: Tahoma;
+    COLOR: #2B587A;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    PADDING-BOTTOM: 10px;
+   
+    PADDING-TOP: 10px;
+    BORDER: 0px solid;
+    BORDER-top: #f3f3f3 1px solid;
+    width:100%;
+     margin-bottom: 10px;
+     margin-right: -20px;
+     
+      -moz-border-radius: 4px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 4px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:4px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 4px; /* закругление углов для всех, кто понимает */ 
+}
+
+.add_post_button:hover {
+
+    COLOR: White;
+    BACKGROUND-COLOR: #FF6400;
+    
+}
+
+ 
+ .on_off{
+
+    display: none;
+}
+
+
+.post_down_menu {
+    BACKGROUND-COLOR: White;
+    DISPLAY: block;
+    font-family: Tahoma;
+    COLOR: #2B587A;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 10px;
+    PADDING-RIGHT: 10px;
+    PADDING-TOP: 5px;
+    
+    -moz-border-radius: 4px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 4px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:4px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 4ыpx; /* закругление углов для всех, кто понимает */ 
+    
+    
+}
+
+.post_down_menu:hover {
+
+    COLOR: White;
+    BACKGROUND-COLOR: #FF6400;
+}
+
+
+
+.add_foto_menu {
+    BACKGROUND-COLOR: White;
+       font-family: Tahoma;
+    COLOR: #2B587A;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    PADDING-BOTTOM: 10px;
+    PADDING-LEFT: 10px;
+    PADDING-RIGHT: 10px;
+    PADDING-TOP: 8px;
+    
+      -moz-border-radius: 4px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 4px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:4px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 4px; /* закругление углов для всех, кто понимает */ 
+}
+
+.add_foto_menu:hover {
+
+    COLOR: White;
+    BACKGROUND-COLOR: #FF6400;
+}
+
+
+.update {
+
+    
+    width:100%;
+}
+
+.active{
+    COLOR: #FF6400;
+}
+
+.avatar{
+    
+    width: 220px;
+    height: 220px;
+    
+  
+    
+}
+
+.js_avatar{
+    
+  
+    cursor: pointer;
+    
+}
+
+.js_add_post_picture{
+    
+    
+    cursor: pointer;
+    
+}
+
+
+
+.post_pic{
+    
+    display: block; 
+    margin:0 auto;
+    max-width: 100%;
+    height: auto;
+     -moz-border-radius: 8px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 8px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:8px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 8px; /* закругление углов для всех, кто понимает */ 
+    
+}
+
+
+.mini_avatar{
+    
+    
+    width: 50px;
+    height: 50px;
+    float:left;
+    margin: 0px 10px 0px 0;
+    -moz-border-radius: 4px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 14px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:4px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 4px; /* закругление углов для всех, кто понимает */
+    
+}
+
+.users{
+    
+    vertical-align: top;
+    
+}
+
+
+.myvideo {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0px;
+    height: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+
+}
+
+.myvideo iframe, .myvideo object, .myvideo embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.mv {
+
+    max-width: 600px;
+    width: 100%;
+}
+
+.youtube {
+
+ background: no-repeat center;
+    background-size: cover;
+      cursor: pointer;
+}
+
+.youtube .play {
+    background: url("data:image/png;base64,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") no-repeat center center;
+    background-size: 64px 64px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    filter: alpha(opacity=80);
+    transition: all 0.2s ease-out;
+}
+
+.youtube .play:hover {
+   /*
+    opacity: 0.8;
+    filter: alpha(opacity=100);*/
+   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAANHSURBVHjaYmSgMfifwvCfEv2McxgYaek+gABiHIyepmdgAAQQ42D3NK0DAyCAGIeax6kdEAABxDhUPU6tgAAIIMbh4HlKAgEggBiHi+fJDQSAAGIkweNvgZQQw9AA74ABIUyMQoAAYhwOsU5JagAIIMbh6nliAwEggBiHs+eJCQSAAGJiGOEAIIAYh3vsE0oFAAHEOBI8jy8QAAKICYvnzw/X5I7NbwABhK0MMBjGWR7DbwABxETtpP/DLvvZL0a2f4M4FaD4ESCAqF4LcEipSbGFdzP9ci568ZWZ5/dgTxIAAcRCk4LPOY+BjYFBgk1UnuHX64cvfh+YJcz99wvrYEoFsAIRIIBYaGoTUkD8eHbrGdPh2RJs/38NqrYHQACx0MUWYEBwMDBIMUipMfx++/TFzwOzBHl+f2AfDAEAEEAsdK33gQEBzAcSrMLSAx4QsGwAEEAsAxLsSAEx0FkDIIBYBjT9DYKsARBALIOi2TtAWQPkd4AAYmEYTGAAsgZAAA2uABiArAEQQIMzAOiYNQACaHAHAI6swXh4tjj7/1/M1DAaIICGRgDQMGsABNDQCgAaZA2AABqaAYAjIFh3d0mQagRAAA2bQVFGZmaypvkAAmhop4C9kxh+vrz//P/B6WIc/36Kk2MEQACxDAOPS1JiFEAAsQw1j//58OLljz3TBHj+fJSkhpEAAcQyFJM6DxWNBggglpGS1HEBgABiGawe//3+2atfe6cLcP/5JElLqwACiGUQx7gYPUZRAQKIBTQsNOBjAiCPv7j77P+hmeK0SupY2w5AvwMEEMsgSupSA+EEgABiGQQxLjaQEwYAAcQCSwp0yQaoHpcayMQHmxgBCCCWkZLUcQGAAGIZKUkdFwAIIJQeFFWyQcREMIXkceZB52mkhRIAAUT1FADsl7/8tX+G4GBL6rgAQABh9KGH6/IYbLEPAgABhG1A5MIw9j+G3wACaMQvkgIIoBG/TA4ggEb8SlGAAGIiNc8Mh3yPDAACaMQvlgYIoBG/XB4ggJhIMOjdEPL7O2J3jgAE0IjfMgMQQCN+0xRAAFG0526wBAQlewcBAmjEb5wECKARv3UWIIBG/OZpgABipHVMDfbt8wABBgChPIjk7rEXkQAAAABJRU5ErkJggg==") no-repeat center center;
+   
+}
