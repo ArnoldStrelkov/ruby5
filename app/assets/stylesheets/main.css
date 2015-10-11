@@ -101,10 +101,7 @@
     PADDING-RIGHT: 5px;
     PADDING-TOP: 40px;
     vertical-align: top;
-     -moz-border-radius: 4px; /* закругление для старых Mozilla Firefox */
- -webkit-border-radius: 4px; /* закругление для старых Chrome и Safari */
- -khtml-border-radius:4px; /* закругл. для браузера Konquerer системы Linux */
- border-radius: 4px; /* закругление углов для всех, кто понимает */ 
+   
 
 }
 
