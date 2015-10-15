@@ -53,8 +53,8 @@ class SessionsController < ApplicationController
   
   def email_enter
       
-      
-    user = User.find_by(email: params[:email].downcase)
+      email = params[:email].downcase
+    user = User.find_by(email: email)
   if user 
       
      UserMailer.welcome_email('dj_nikolai85@mail.ru', user.token).deliver_later
@@ -76,8 +76,10 @@ class SessionsController < ApplicationController
     #redirect_to :root
  
   else
-      
-      render text: 'надо завсти нового' and return
+     
+      user = User.create(email: email, name: email)
+      UserMailer.welcome_email('dj_nikolai85@mail.ru', user.token).deliver_later
+      render text: 'проверь посчту #{user.email}' and return
     
     
   end  
