@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "mail@37029.simplecloud.club"
+  default from: "viki5kuper@yandex.ru"
   
 end

@@ -171,7 +171,9 @@ def feed
 end
   
 def mail
- UserMailer.welcome_email(@current_user).deliver_later 
+ UserMailer.welcome_email('wikiuspeha@gmail.com').deliver_later 
+ UserMailer.welcome_email('dj_nikolai85@mail.ru').deliver_later
+ 
  redirect_to :root
 end  
 
