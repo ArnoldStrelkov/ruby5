@@ -64,8 +64,15 @@ class SessionsController < ApplicationController
        UserMailer.welcome_email(email, user.token).deliver_later
    
      else
-       user = User.create(email: email, name: name)
+       #user = User.create(email: email, name: name)
+       user = User.new(email: email, name: name)
+       if user.save
       UserMailer.welcome_email(email, user.token).deliver_later
+       else
+           flash.now[:error] = 'Invalid email' 
+   @users = User.order(id: :asc)
+     render  :new, layout: false and return
+       end       
       
      end  
      

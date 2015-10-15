@@ -1,8 +1,6 @@
 <% #provide(:title, "Sign in") %>
 
-<% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-<% end %>
+
     
 <!-- 
 
@@ -52,7 +50,9 @@
 <div class="">
  
  <form method="POST" action="/email_enter" id="email_enter"  >
-    <div class="css_inner_form">
+    <div class="css_inner_form"><% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %><br></div>
+<% end %>
                   <h3>Для входа введите Ваш e-mail
                 <label ></label> <br><br>
                 <input name="email" type="text" class="form-control" placeholder="">

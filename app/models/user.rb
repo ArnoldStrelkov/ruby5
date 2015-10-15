@@ -1,9 +1,20 @@
+class EmailValidator < ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)`[a-z]{2,})\z/i
+                    
+      record.errors[attribute] << (options[:message] || "is not an email")
+    end
+  end
+end
+
+
 class User < ActiveRecord::Base
     #include AvatarUploader
     #require 'carrierwave'
     mount_uploader :avatar, AvatarUploader
     
     #validates :name,  presence: true
+    validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     validates :email, presence: true,  uniqueness: { case_sensitive: false }
     before_save { self.email = email.downcase }
     has_secure_password validations: false
@@ -33,3 +44,4 @@ private
     
   
 end
+
