@@ -77,18 +77,31 @@ class SessionsController < ApplicationController
  
   else
       
-      
-    flash.now[:error] = 'Invalid email/password combination' 
-   @users = User.order(id: :asc)
-     render :new, layout: 'main' 
-    
-    #div = render_to_string 'sessions/new', layout: false
-    #my_hash = {result: "true", div: div}
-   # my = JSON.generate(my_hash)
-   # render json: my
+      render text: 'надо завсти нового' and return
     
     
   end  
+  end 
+  
+  def enter
+      user = User.find_by(token: params[:id])
+       if user 
+   
+         sign_in user
+   
+    #div = render_to_string 'sessions/new', layout: false
+    #my_hash = {result: "false", div: div}
+    #my = JSON.generate(my_hash)
+    #render json: my and return
+   
+        redirect_to :root
+ 
+       else
+         render text: 'не вошли' and return
+       end
+      
+      
+      
   end 
   
   

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   
-  #get '/js', to: 'application#js'
+  get '/enter', to: 'sessions#enter'
   
   get ':controller/:action/:id/'
   post ':controller/:action/(:id)/'
