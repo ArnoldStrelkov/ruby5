@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   @users = User.order(id: :asc)
   (@my_id = @current_user.id) if @current_user
   @main = 'active'
+  @target = 'user'
    
    render  layout: 'main'
   end
@@ -54,35 +55,22 @@ class SessionsController < ApplicationController
   def email_enter
       
    email = params[:email].downcase
+   @target = email.split('@')[1]
+   name = email.split('@')[0]
    user = User.find_by(email: email)
+   
      if user 
       
        UserMailer.welcome_email(email, user.token).deliver_later
- 
-       redirect_to :root
-     
-     
-     # render text: params[:email].to_s and return
-      
-      #&& user.authenticate(params[:password])
    
-   #sign_in user
-   
-    #div = render_to_string 'sessions/new', layout: false
-    #my_hash = {result: "false", div: div}
-    #my = JSON.generate(my_hash)
-    #render json: my and return
-   
-    #redirect_to :root
- 
      else
-     
-      user = User.create(email: email, name: email)
+       user = User.create(email: email, name: name)
       UserMailer.welcome_email(email, user.token).deliver_later
-      render text: 'для входа перейдите по ссылке в письме которое мы отправили на ваш емэйл' and return
-    
-    
+      
      end  
+     
+   
+   render layout: false 
   end 
   
   def enter

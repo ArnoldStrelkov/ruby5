@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   
   get '/enter', to: 'sessions#enter'
+  post '/enter', to: 'sessions#email_enter'
   
   get ':controller/:action/:id/'
   post ':controller/:action/(:id)/'

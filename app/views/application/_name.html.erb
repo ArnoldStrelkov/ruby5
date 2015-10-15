@@ -12,13 +12,8 @@ alt="" border="0">
 
 
   <div class="name_css">
-      <h3> <%= @single_user.name unless @single_user.nil? %>
-      
-       
-     
-    <%= 'Все блоги' if @logo %>
-      
-       <%= 'Читаемые блоги'  if @target == 'feed' and @single_user.nil? %>
+      <h3><%= @single_user.name unless @single_user.nil? %><%= 'Все блоги' if @logo %>
+             <%= 'Читаемые блоги'  if @target == 'feed' and @single_user.nil? %>
         <%= 'Сохраненные посты'  if @target == 'saved' and @single_user.nil?%>
       </h3>
       

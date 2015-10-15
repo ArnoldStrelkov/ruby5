@@ -22,8 +22,8 @@ Rails.application.configure do
   
   config.action_mailer.delivery_method = :smtp 
   config.action_mailer.smtp_settings = {
-
-    :enable_starttls_auto => true,
+    enable_starttls_auto:  true,
+    #:enable_starttls_auto => true,
     address:"smtp.yandex.ru",
     port: 587,
     domain: "127.0.0.1",
@@ -34,7 +34,7 @@ Rails.application.configure do
   }
     
    
-  
+  config.web_console.whitelisted_ips = '5.143.0.206'
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

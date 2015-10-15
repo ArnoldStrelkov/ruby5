@@ -130,15 +130,34 @@ $(window).scroll(function(){
             
             
 
-$(document).on('click', '.count', function(e) {
-e.preventDefault();
+$(document).on('click', '.email_enter', function(e) {
 
- var cart =  5;
+ e.preventDefault();
+  var formData;
+    formData = new FormData($('#email_enter')[0]);
  
- $.post( "/api/count/", { name: "John", time: cart })
-  .done(function( data ) {
-    alert( "Data Loaded: " + data );
+ 
+  return   $.ajax({
+      url:"/enter",
+      type: 'POST',
+      data: formData,
+      async: true,
+      success: function(response) {
+        
+       $('#email_enter').html (response);  
+ 
+      },
+     cache: false,
+      contentType: false,
+      processData: false
   });
+ 
+ 
+ 
+ //$.post( "/enter", formData)
+ // .done(function( data ) {
+ //   alert( "email_enter " + data );
+//  });
 
  
 
