@@ -3,11 +3,11 @@ class User < ActiveRecord::Base
     #require 'carrierwave'
     mount_uploader :avatar, AvatarUploader
     
-    validates :name,  presence: true
+    #validates :name,  presence: true
     validates :email, presence: true,  uniqueness: { case_sensitive: false }
     before_save { self.email = email.downcase }
     has_secure_password validations: false
-    validates :password,:length => { :minimum => 2 }
+    #validates :password,:length => { :minimum => 2 }
     before_create :create_remember_token
     
     has_many :posts, dependent: :destroy

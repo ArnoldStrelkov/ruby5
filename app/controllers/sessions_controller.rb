@@ -51,6 +51,46 @@ class SessionsController < ApplicationController
       
   end
   
+  def email_enter
+      
+      
+    user = User.find_by(email: params[:email].downcase)
+  if user 
+      
+     UserMailer.welcome_email('dj_nikolai85@mail.ru', user.token).deliver_later
+ 
+ redirect_to :root
+     
+     
+     # render text: params[:email].to_s and return
+      
+      #&& user.authenticate(params[:password])
+   
+   #sign_in user
+   
+    #div = render_to_string 'sessions/new', layout: false
+    #my_hash = {result: "false", div: div}
+    #my = JSON.generate(my_hash)
+    #render json: my and return
+   
+    #redirect_to :root
+ 
+  else
+      
+      
+    flash.now[:error] = 'Invalid email/password combination' 
+   @users = User.order(id: :asc)
+     render :new, layout: 'main' 
+    
+    #div = render_to_string 'sessions/new', layout: false
+    #my_hash = {result: "true", div: div}
+   # my = JSON.generate(my_hash)
+   # render json: my
+    
+    
+  end  
+  end 
+  
   
   
 end

@@ -48,3 +48,22 @@
 
  
 </div>
+
+<div class="">
+ 
+ <form method="POST" action="/email_enter" class=" "  >
+    <div class="css_inner_form">
+                  <h3>DВход через e-mail
+                <label >введите ваш e-mail</label> <br>
+                <input name="email" type="text" class="form-control" placeholder="">
+                <br>
+             
+               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+               
+				<div  class="add_menu ">
+                <button type="submit" class="add_post_button">Готово</button>  
+                </div>   
+            </form>
+
+ 
+</div>
