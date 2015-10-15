@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+    
+<div class="main">
+
+    <div class="block1">
+        <div class="name"> 
+      <%= render 'name' %>
+        </div>
+    </div>
+
+    <div class="right-block">
+        <div class="block3">
+            <%#= render 'users' %>
+            инвест
+        </div>
+        <div class="block4">
+             <div class="fixed">
+                
+            <%= render 'menu' %>
+              </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+
+    <div style="" class="block2">
+       
+       
+        <div class="posts">
+            
+       	<%= yield %>
+       	</div>
+       	
+        </div>
+    </div>
+</div>  
+    
+    
+
+
+</body>
+</html>

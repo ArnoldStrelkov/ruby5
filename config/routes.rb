@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   get '/enter', to: 'sessions#enter'
   post '/enter', to: 'sessions#email_enter'
   
+  get '/invest', to: 'invest#viki5'
+  
   get ':controller/:action/:id/'
   post ':controller/:action/(:id)/'
 

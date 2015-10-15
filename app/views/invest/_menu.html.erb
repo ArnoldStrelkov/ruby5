@@ -1,7 +1,7 @@
  <div style="">
-  
-  <a href= '/' class = "menu active"  >Блоги</a>
-  <a href= '/invest' class = menu >Инвестиции</a>
+
+  <a href= '/' class = "menu "  >Блоги</a>
+  <a href= '/invest' class = "menu active" >Инвестиции</a>
   <%= link_to "Вход", signin_path ,  class:"exit menu" if @current_user.nil?%>
   <%= link_to "Выход", signout_path, method: "delete" ,  class:"menu" unless @current_user.nil?%>
   
