@@ -53,13 +53,13 @@ class SessionsController < ApplicationController
   
   def email_enter
       
-      email = params[:email].downcase
-    user = User.find_by(email: email)
-  if user 
+   email = params[:email].downcase
+   user = User.find_by(email: email)
+     if user 
       
-     UserMailer.welcome_email('dj_nikolai85@mail.ru', user.token).deliver_later
+       UserMailer.welcome_email(email, user.token).deliver_later
  
- redirect_to :root
+       redirect_to :root
      
      
      # render text: params[:email].to_s and return
@@ -75,14 +75,14 @@ class SessionsController < ApplicationController
    
     #redirect_to :root
  
-  else
+     else
      
       user = User.create(email: email, name: email)
-      UserMailer.welcome_email('dj_nikolai85@mail.ru', user.token).deliver_later
-      render text: 'проверь посчту #{user.email}' and return
+      UserMailer.welcome_email(email, user.token).deliver_later
+      render text: 'для входа перейдите по ссылке в письме которое мы отправили на ваш емэйл' and return
     
     
-  end  
+     end  
   end 
   
   def enter
@@ -99,7 +99,7 @@ class SessionsController < ApplicationController
         redirect_to :root
  
        else
-         render text: 'не вошли' and return
+         render text: 'неверный ключ' and return
        end
       
       
