@@ -80,25 +80,7 @@ $(window).scroll(function(){
                         hold = false;
                         count++;
                         
-     // $.ajax({
-    //  url:'/api/count/' + count,
-    //url: $(this).attr('action'),
-    //  type: 'POST',
-    //  data:  { "user" : "username"} ,
-    //  async: true,
-    //  success: function(response) {
-     //    alert(response);
-       
-    //    $('.posts').append(response);  
-     //    hold = true;
-        //$('.name').html (response.name);
-        // $('.posts').html (response.posts);
-         
-    //  },
-    // cache: false,
-    //  contentType: false,
-    //  processData: false
- // });
+     
         var url = document.location.href
         if (url == "https://ruby-arnoldstrelkov-1.c9.io/") {
         url ='/user'
@@ -153,46 +135,12 @@ $(document).on('click', '.email_enter', function(e) {
   });
  
  
- 
- //$.post( "/enter", formData)
- // .done(function( data ) {
- //   alert( "email_enter " + data );
-//  });
-
- 
-
-
-
 
  });
  
  
  
-$(document).on('click', '._a_ajax', function(e) {
-e.preventDefault();
 
-var url;
-url = $(this).attr('href');
-
-    return   $.ajax({
-      url:url,
-    //url: $(this).attr('action'),
-      type: 'POST',
-      data: '',
-      async: true,
-      success: function(response) {
-        // alert(response);
-        $('.name').html (response.name);
-         $('.posts').html (response.posts);
-         
-      },
-     cache: false,
-      contentType: false,
-      processData: false
-  });
-
-
- });
  
  
  $(document).on('click', '._exit', function(e) {
@@ -280,11 +228,7 @@ var ajaxpost;
          
          
          
-         
-         
-        //  $('.main').prepend(data);
-	  // $(_this).html(data);
-	  //$('.my_post').html($.parseHTML(data.data));
+       
       },
      cache: false,
       contentType: false,
@@ -638,3 +582,44 @@ $('body').on('click', '.post_full', function(e) {
   }
 });
 
+
+//кнопки выбоа роли
+
+$(document).on('click', '.choise_menu', function(e) {
+  var _this;
+  e.preventDefault();
+  _this = $(this);
+var url;
+//url = $(this).attr('href');
+//alert(url);
+ //   return   $.ajax({
+ //     url: url,
+    //url: $(this).attr('action'),
+  //    type: 'GET',
+  //    data: '',
+ //     async: true,
+ //     success: function(response) {
+
+if (_this.hasClass('true')) {
+    
+    _this.removeClass('true');
+    _this.html('выбрать роль инвестора');
+    
+  } else {
+    
+    _this.addClass('true');
+    _this.html('вы выбрали роль инвестора');
+    
+  }
+    
+       
+        
+        
+ //     },
+ //    cache: false,
+ //     contentType: false,
+ //     processData: false
+ // });
+
+
+ });

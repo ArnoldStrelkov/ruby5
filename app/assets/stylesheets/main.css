@@ -273,6 +273,37 @@
 }
 
 
+.choise_menu {
+    BACKGROUND-COLOR: White;
+    border: 1px solid #2B587A;
+    DISPLAY: block;
+    font-family: Tahoma;
+    COLOR: #2B587A;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 15px;
+    PADDING-RIGHT: 15px;
+    PADDING-TOP: 5px;
+    text-align: center;
+    
+    -moz-border-radius: 4px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 4px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:4px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 4ыpx; /* закругление углов для всех, кто понимает */ 
+    
+    
+}
+
+.choise_menu:hover {
+
+    COLOR: White;
+    BACKGROUND-COLOR: #FF6400;
+    border: 1px solid #FF6400;
+}
+
+
 
 .add_foto_menu {
     BACKGROUND-COLOR: White;
