@@ -68,7 +68,7 @@
  -webkit-border-radius: 10px; /* закругление для старых Chrome и Safari */
  -khtml-border-radius:10px; /* закругл. для браузера Konquerer системы Linux */
  border-radius: 10px; /* закругление углов для всех, кто понимает */ 
-     
+     text-align: justify;
     
 }
 
@@ -282,11 +282,12 @@
     FONT-SIZE: 11px;
     FONT-WEIGHT: bold;
     TEXT-DECORATION: none;
-    PADDING-BOTTOM: 5px;
+  
     PADDING-LEFT: 15px;
     PADDING-RIGHT: 15px;
-    PADDING-TOP: 5px;
+   
     text-align: center;
+    height: 100%;
     
     -moz-border-radius: 4px; /* закругление для старых Mozilla Firefox */
  -webkit-border-radius: 4px; /* закругление для старых Chrome и Safari */
@@ -303,6 +304,18 @@
     border: 1px solid #FF6400;
 }
 
+
+.choise_div {
+    
+PADDING-TOP: 15px;
+ PADDING-LEFT: 15px;
+
+float: right;
+width: 150px; 
+height: 150px;
+
+
+}
 
 
 .add_foto_menu {

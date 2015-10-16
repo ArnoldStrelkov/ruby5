@@ -603,12 +603,12 @@ var url;
 if (_this.hasClass('true')) {
     
     _this.removeClass('true');
-    _this.html('выбрать роль инвестора');
+    _this.html('<br><br>выбрать роль инвестора');
     
   } else {
     
     _this.addClass('true');
-    _this.html('вы выбрали роль инвестора');
+    _this.html('<br><br>вы выбрали роль инвестора');
     
   }
     
