@@ -59,15 +59,21 @@ class SessionsController < ApplicationController
    name = email.split('@')[0]
    user = User.find_by(email: email)
    
-     if user 
+   remember_token = User.new_remember_token
+    
+    
+   
+     if user
+         
+       user.update_attribute(:token, User.encrypt(remember_token))
       
-       UserMailer.welcome_email(email, user.token).deliver_later
+       UserMailer.welcome_email(email, remember_token).deliver_later
    
      else
        #user = User.create(email: email, name: name)
-       user = User.new(email: email, name: name)
+       user = User.new(email: email, name: name, token: User.encrypt(remember_token))
        if user.save
-      UserMailer.welcome_email(email, user.token).deliver_later
+      UserMailer.welcome_email(email, remember_token).deliver_later
        else
            flash.now[:error] = 'Invalid email' 
    @users = User.order(id: :asc)
@@ -81,7 +87,7 @@ class SessionsController < ApplicationController
   end 
   
   def enter
-      user = User.find_by(token: params[:id])
+      user = User.find_by(token: User.encrypt(params[:id]))
        if user 
    
          sign_in user
