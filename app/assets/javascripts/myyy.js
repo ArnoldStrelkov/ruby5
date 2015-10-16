@@ -70,7 +70,7 @@ var hold = true;
 
 $(window).scroll(function(){
     
-    //alert(document.location.href);
+   // alert(document.location.pathname);
 	
     if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 300){
                        //alert(count);
@@ -81,8 +81,8 @@ $(window).scroll(function(){
                         count++;
                         
      
-        var url = document.location.href
-        if (url == "https://ruby-arnoldstrelkov-1.c9.io/") {
+        var url = document.location.pathname
+        if (url == "/") {
         url ='/user'
         };
         

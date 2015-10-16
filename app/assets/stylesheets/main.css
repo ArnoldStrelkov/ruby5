@@ -283,6 +283,10 @@
     FONT-WEIGHT: bold;
     TEXT-DECORATION: none;
   
+  PADDING-BOTTOM: 15px;
+   
+    PADDING-TOP: 15px;
+    
     PADDING-LEFT: 15px;
     PADDING-RIGHT: 15px;
    
@@ -307,12 +311,12 @@
 
 .choise_div {
     
-PADDING-TOP: 15px;
+PADDING-TOP: 5px;
  PADDING-LEFT: 15px;
 
 float: right;
 width: 150px; 
-height: 150px;
+height: 100%;
 
 
 }
