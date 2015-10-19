@@ -12,31 +12,43 @@
 
 <div class="post">
     
-<h3>Выберите роль инвестора</h3>
-<div class="choise_div" >
-    <a class="choise_menu " href="/api/saved/192">выбрать роль инвестора</a>
-   </div >
-Я хочу взойти на вершину иерахии общества. <br>
-Я хочу быть на вершине пищевой цепочки. <br>
-Я хочу чтобы весь мир работал на меня.<br>
-Я хочу чтобы предприниматели работали на меня и отдавали мне от 50 до 90% чистой прибыли<br>
-И для этого я готов инвестировать свои деньги в бизнес<br>
-Я готов дать деньги предпринимателям для того чтобы они открыли на мои деньги бизнесы и затем отдавали мне
+<h3>Роль инвестора</h3>
+   <div class="choise_div" >
+   <% if @current_user.choise and @current_user.choise.investor %>
+    <a class="choise_menu " href="/api/setchoise/investor">вы выбрали роль инвестора</a>
+    <% else%>
+   
+    <a class="choise_menu " href="/api/setchoise/investor">выбрать роль инвестора</a>
+    
+    <% end%>
+     </div >
+     
+     
+
+
+Я готов дать деньги предпринимателям для того чтобы они открыли на мои 
+деньги бизнесы и затем отдавали мне
 от 50 до 90% чистой прибыли от работы данных бизнесов.<br>
-Я готов  стать инвесторм.<br>
-Я хочу стать инвестором.
+
+
 <br>
 
 
-     
-</div >
 
-<div class="post">
     
-<h3>Выберите роль предпринимателя</h3>
-<div class="choise_div" >
-    <a class="choise_menu " href="/api/saved/192">выбрать роль предпринимателя</a>
-   </div >
+<h3>Роль предпринимателя</h3>
+ 
+ 
+ <div class="choise_div" >
+   <% if @current_user.choise and @current_user.choise.commresant %>
+    <a class="choise_menu " href="/api/setchoise/commresant">вы выбрали роль предпринимателя</a>
+    <% else%>
+   
+    <a class="choise_menu " href="/api/setchoise/commresant">выбрать роль предпринимателя</a>
+    
+    <% end%>
+     </div >
+     
 Я готов взять деньги у инвесторов, открыть на эти деньги бизнес а затем отдавать
 инвесторам от 50 до 90% чистой прибыли. <br>
 Дайте мне инвестиции. <br>
@@ -45,4 +57,42 @@
 
 
      
+
+    <h3>Роль ментора</h3>
+ 
+ <div class="choise_div" >
+   <% if @current_user.choise and @current_user.choise.mentor %>
+    <a class="choise_menu " href="/api/setchoise/mentor">вы выбрали роль ментора</a>
+    <% else%>
+   
+    <a class="choise_menu " href="/api/setchoise/mentor">выбрать роль ментора</a>
+    
+    <% end%>
+     </div >
+     
+Я знаю как открыть и развить тот или иной бизнес и 
+я готов передать мои знания в обмен на определенный процент от 
+чистой прибыли тех бизнесов которые вы откроете по моему плану. <br>
+
+<br>
+
+    
+<h3>Роль клиента</h3>
+  <div class="choise_div" >
+   <% if @current_user.choise and @current_user.choise.customer %>
+    <a class="choise_menu " href="/api/setchoise/customer">вы выбрали роль клиента</a>
+    <% else%>
+   
+    <a class="choise_menu " href="/api/setchoise/customer">выбрать роль клиента</a>
+    
+    <% end%>
+     </div >
+     
+Я не готов инвестировать свои деньги в бизнес, однако я
+не хочу чтобы в мире был разрыв между бедными и богатыми, поэтому с удовольствием
+воспользуюсь услугами ваших бизнесов в качестве клиента и покупателя. <br>
+
+<br>
+
 </div >
+

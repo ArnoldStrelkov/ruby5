@@ -583,43 +583,43 @@ $('body').on('click', '.post_full', function(e) {
 });
 
 
-//кнопки выбоа роли
+//кнопки выбора роли
 
 $(document).on('click', '.choise_menu', function(e) {
   var _this;
   e.preventDefault();
   _this = $(this);
 var url;
-//url = $(this).attr('href');
+url = $(this).attr('href');
 //alert(url);
- //   return   $.ajax({
- //     url: url,
+    return   $.ajax({
+      url: url,
     //url: $(this).attr('action'),
-  //    type: 'GET',
-  //    data: '',
- //     async: true,
- //     success: function(response) {
-
-if (_this.hasClass('true')) {
+      type: 'POST',
+      data: '',
+      async: true,
+      success: function(response) {
+//alert(response);
+//if (_this.hasClass('true')) {
     
-    _this.removeClass('true');
-    _this.html('<br><br>выбрать роль инвестора');
+   // _this.removeClass('true');
+    _this.html('вы выбрали роль ' + response);
     
-  } else {
+ // } else {
     
-    _this.addClass('true');
-    _this.html('<br><br>вы выбрали роль инвестора');
+ //   _this.addClass('true');
+ //   _this.html('<br><br>вы выбрали роль инвестора');
     
-  }
+//  }
     
        
         
         
- //     },
- //    cache: false,
- //     contentType: false,
- //     processData: false
- // });
+     },
+     cache: false,
+      contentType: false,
+    processData: false
+  });
 
 
  });

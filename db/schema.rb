@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151004053818) do
+ActiveRecord::Schema.define(version: 20151019075504) do
+
+  create_table "choises", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "investor"
+    t.boolean "biginvestor"
+    t.boolean "commresant"
+    t.boolean "mentor"
+    t.boolean "customer"
+  end
 
   create_table "feeds", force: :cascade do |t|
     t.integer  "user_id"

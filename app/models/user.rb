@@ -12,10 +12,18 @@ class User < ActiveRecord::Base
     #validates :password,:length => { :minimum => 2 }
     #before_create :create_remember_token
     
+    has_one :choise
     has_many :posts, dependent: :destroy
     has_many :savedposts, dependent: :destroy
     
+    has_many :followeds, through: :feeds, source: :feed
+    has_many :points, through: :feeds, source: :user
+    has_many :followers, through: :revers_feeds, source: :user
     
+    has_many :feeds, foreign_key: "user_id", class_name:  "Feed"
+    has_many :revers_feeds, foreign_key: "feed_id", class_name:  "Feed"
+    
+    has_many :sposts, through: :savedposts, source: :post
 
     def User.new_remember_token
         SecureRandom.urlsafe_base64

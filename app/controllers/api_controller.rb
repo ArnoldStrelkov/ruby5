@@ -62,35 +62,60 @@ end
 
 
 def picture
-   #№cookies[:tmp] = 5 if cookies[:tmp] == nil
-   #cookies[:tmp] = cookies[:tmp].to_i + 1
-     #tmp = User.find(cookies[:tmp])
-  #tmp.update(avatar: params[:user][:avatar]) 
-  #tmp.save(validate: false)
-  #render text: tmp.avatar.url
-  
+   
   @current_user.update(avatar: params[:user][:avatar]) 
   @current_user.save(validate: false)
   render text: @current_user.avatar.url
 end
 
 
+def setchoise
+  choise = params[:id]
+  
+  Choise.create(user_id: @current_user.id) unless  @current_user.choise
+    
+  
+  case choise
+  when ('investor')  
+    @current_user.choise.update(investor: true) 
+    text = 'инвестора'
+  when ('biginvestor')  
+    @current_user.choise.update(biginvestor: true) 
+    text = 'бигинвестора'
+  when ('commresant')  
+    @current_user.choise.update(commresant: true) 
+    text = 'предпринимателя'
+  when ('mentor')  
+    @current_user.choise.update(mentor: true) 
+    text = 'ментора'
+  when ('customer')  
+    @current_user.choise.update(customer: true) 
+    text = 'клиента'
+  end
+  
+  render text: text
+ 
+ 
+end
+
+
 def count4
-  @id = params[:page]
+  @id = params[:id]
   
   @target = 'user'
     
     (@my_id = @current_user.id) if @current_user
     
-    
+    items = User.find(@id.to_i).followed_ids
       @logo = true
-      @all = Post.order(id: :desc).offset(10*@id.to_i).limit(10)
-      @users = User.order(id: :asc)
+      @all = Post.where(user_id: items).order(id: :desc).limit(10)
+      
+      @users = User.find(@id.to_i).followeds
       
    
      
     # render text: params.to_s
-    render 'main', layout: false
+    render 'main', layout: "main"
  
 end
 

@@ -9,22 +9,20 @@ class ApplicationController < ActionController::Base
   layout 'main'
   
    
-  def add
+def add
   
   @param =  params[:base][:body]
-  #@hello =  '123'
   Post.create(body: @param)
   
-  #@all = Post.order('id')
+end
   
-  #render html: @param.to_s.html_safe
-  #render plain: @param.to_s
-  end
   
-  def new
+def new
+      
   @hello = Post.new
   @all = Post.order('id')
-  end
+  
+end
   
  
   
@@ -40,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
   
  
-  def posts
+  def postss
      @target = 'user'
     @user_id = params[:id]
     page = params[:page]
@@ -100,40 +98,29 @@ class ApplicationController < ActionController::Base
     render  'main', layout: false
   end
    
-  def saved
+def saved
     
     page = params[:page]
     @target = 'saved'
     @user_id = params[:id]
     @my_id = @current_user.id
-    obj = Savedpost.where(user_id: @my_id)
-    items = []
-    
+   
     usr = []
-    obj.each {|o| usr << Post.find(o.post_id).user.id }
+    @current_user.sposts.each {|o| usr << o.user_id }
     @users = User.find(usr)
     
-    if @user_id.nil?
-    obj.each {|o| items << o.post_id  }
-    else
-    obj.each {|o| items << o.post_id if Post.find(o.post_id).user.id.to_s == @user_id.to_s }
-    @single_user = User.find(@user_id)
-    end
+    page.nil? ? offs = 1 : offs = page
     
-    
-      if page.nil?
-        
-        @all = Post.where(id: items).order(id: :desc).limit(10)
-        render 'main', layout: 'main'
-    
-        
-      else
-         @all = Post.where(id: items).order(id: :desc).offset(10*page.to_i-10).limit(10)
-         render 'main', layout: false
+          if @user_id.nil?
+            @all = @current_user.sposts.offset(10*offs.to_i-10).limit(10)
+          else
+            @all = @current_user.sposts.offset(10*offs.to_i-10).limit(10).where(user_id: @user_id)        
+            @single_user = User.find(@user_id) 
+          end
           
-      end
+    page.nil? ?  (render 'main', layout: 'main') : (render 'main', layout: false)
     
-  end
+end
   
   
 def feed
