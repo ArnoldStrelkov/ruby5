@@ -38,7 +38,7 @@ end
   end
   
  
-  def postss
+  def posts
      @target = 'user'
     @user_id = params[:id]
     page = params[:page]
